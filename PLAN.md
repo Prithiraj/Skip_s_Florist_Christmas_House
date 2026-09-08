@@ -1,13 +1,12 @@
 # Skip's Florist & Christmas House — Website Plan
 
 ## Goal
-Build a polished, responsive static website for Skip's Florist & Christmas House that combines:
 
-- the local-business clarity of the supplied local-florist reference,
-- the merchandising hierarchy of the supplied ecommerce reference,
-- the warm editorial typography and storytelling of the supplied floral-studio reference.
+Build a polished, responsive static site for Skip's Florist & Christmas House that feels like a modern local-florist storefront without inventing ecommerce capability or business facts.
 
-The site should feel like a real neighborhood florist first and a generic ecommerce template second.
+The latest visual direction is inspired by the supplied ecommerce reference: a compact announcement bar, centered navigation, a commerce-forward hero, horizontally browsable occasion shortcuts, a clean product-card grid, a strong delivery banner, compact trust/story modules, and a dense but readable footer.
+
+The reference is used for **layout rhythm, hierarchy, spacing, typography contrast, card proportions and responsive behavior only**. Its invented store name, delivery cutoff, product names, testimonials, subscription features, cart behavior and other fictional business details are not copied.
 
 ## Source-of-truth business details
 
@@ -15,104 +14,97 @@ The site should feel like a real neighborhood florist first and a generic ecomme
 - **Address:** 5324 Mile Stretch Drive, Holiday, FL 34690
 - **Phone:** (727) 938-3391
 - **Hours:** Mon–Fri 9:00 AM–3:00 PM; Sat 9:00 AM–12:00 PM; Sun closed
-- **Services:** local floral delivery, everyday flowers, weddings/events, sympathy/funeral flowers, plants/gifts, seasonal/Christmas decor
-- **Positioning:** family-owned local florist with 100+ years of combined floral design experience
+- **Services represented:** flowers, local delivery, weddings/events, sympathy flowers, seasonal/Christmas flowers and decor
+- **Ordering:** hand off to the florist's current live storefront at `flowerstrinity.com`
 
 ## Experience principles
 
-1. **Real photography is primary.** Actual Skip's storefront/shop imagery plus real floral photography carries the page. Decorative motion only complements it.
-2. **Local conversion first.** Phone, directions, hours, address, delivery information and consultation CTAs remain prominent on desktop and mobile.
-3. **Merchandising without fake checkout.** Featured arrangements link to the shop's current ordering site rather than pretending a static GitHub Pages demo has a live cart.
-4. **Editorial warmth.** Large serif headlines, soft ivory surfaces, deep evergreen, muted cranberry/terracotta, and generous spacing.
-5. **Christmas House is part of the identity.** Seasonal merchandising gets a dedicated visual section rather than hiding the second half of the business name.
-6. **Fast and accessible.** Reduced-motion support, visible focus states, semantic HTML, skip link, lazy-loaded secondary photography and no heavy runtime dependency.
+1. **Local storefront first.** Phone, directions, hours and live-store links remain easy to reach.
+2. **Real photography leads.** Actual Skip's storefront/shop photos and real flower photography carry the design.
+3. **No fake cart.** The static redesign never pretends to process checkout; product/shop actions open the live storefront.
+4. **No invented business claims.** The design reference is visual inspiration only.
+5. **Current catalog facts are clearly separated from representative photography.** Product names/prices shown in the highlight cards mirror the current storefront at implementation time, and the page explicitly states that the images are representative.
+6. **Mobile mirrors desktop hierarchy.** The mobile layout keeps the announcement bar, centered brand, horizontal occasion rail, horizontally scrollable product cards and persistent Call / Shop / Directions dock.
+7. **Accessible and fast.** Semantic HTML, keyboard-friendly navigation, visible focus states, reduced-motion handling, lazy-loaded secondary images, and no heavy runtime dependency.
 
 ## Information architecture
 
-### Global
-- Delivery/service ribbon
-- Responsive navigation
-- Persistent local-action buttons on mobile
-
-### Home page sections
-1. **Hero** — local florist positioning, real flower photography, Shop / Call CTAs and live open/closed status
-2. **Trust strip** — phone, hours, address/directions
-3. **Shop by occasion** — Birthday, Sympathy, Love & Romance, Just Because
-4. **Featured flowers** — representative categories/pricing; links to the existing ordering storefront
-5. **Same-day/local delivery callout**
-6. **Wedding & event consultation** — editorial split layout
-7. **Christmas House** — actual shop/holiday imagery and seasonal gift positioning
-8. **Our local story** — family-owned + design experience + actual storefront/floral photos
-9. **Visit us** — address, hours, embedded map and directions
-10. **Customer feedback CTA** — points to the florist's current reviews page; no fabricated testimonials
-11. **Footer** — contact, shop links, service links and photo credits
+1. Announcement / local-delivery ribbon
+2. Centered responsive navigation
+3. Ecommerce-style hero with local-business copy, Shop + Call CTAs, live status, real floral photography and an actual Skip's sign card
+4. Horizontal occasion rail
+5. Current storefront highlights
+6. Local-delivery callout
+7. Weddings & events feature
+8. Christmas House feature using actual shop imagery
+9. Local story / storefront facts
+10. Customer-review handoff with no fabricated quotes
+11. Visit section with hours, address and map
+12. Footer with current store links
+13. Persistent mobile Call / Shop / Directions dock
 
 ## Visual system
 
-- **Display type:** Georgia / classic serif stack to avoid external font dependency
+- **Frame:** centered desktop site canvas on a warm neutral page background
+- **Brand color:** deep evergreen
+- **Accent:** warm coral
+- **Surfaces:** white, ivory and pale mint
+- **Display type:** Georgia / classic serif stack
 - **UI/body type:** system sans stack
-- **Core colors:** evergreen, warm ivory, cranberry, terracotta, sage, brass
-- **Image treatment:** natural crops, rounded editorial cards, subtle borders/shadows, no aggressive overlays
-- **Motion:** reveal/hover transitions plus a lightweight Canvas 2D falling-petal ambience; disabled for `prefers-reduced-motion`
-- **Layout rhythm:** header, hero and content sections share a 1240px outer container with consistent 28px desktop gutters; the hero copy and photography keep independent columns without overlap.
+- **Hero:** two-column desktop composition with large type and floral photography; stacked and centered on mobile
+- **Cards:** tighter ecommerce proportions, smaller radii, thin green-tinted borders
+- **Motion:** subtle reveal and hover transitions only
+- **3D:** intentionally omitted because it would compete with the reference's clean retail hierarchy and the real photography
 
-## Technical approach
-
-- Static HTML/CSS/JavaScript so deployment to GitHub Pages is dependable.
-- No build step required.
-- Actual Skip's imagery is loaded from the shop's existing Flower Shop Network CDN; supporting high-resolution real floral photography is loaded from Unsplash. Provenance is documented in `CREDITS.md`.
-- External commerce CTAs point to the florist's existing live ordering website.
-- Google Maps/directions uses the supplied place link/query plus a simple embedded map.
-- `app.js` calculates current open/closed status in the `America/New_York` timezone.
-- `layout-fixes.css` contains the post-launch responsive alignment pass and is loaded by `app.js` after the base visual system.
-- GitHub Pages workflow in `.github/workflows/pages.yml` deploys the repository root and requests Pages enablement when needed.
-
-## Photography plan
+## Photography
 
 ### Actual Skip's imagery
-Use images published on Skip's existing Flower Shop Network site, including:
-- storefront exterior,
-- roadside Skip's Florist & Christmas House sign,
-- shop gift/Christmas displays,
-- shop decorative displays,
-- real floral arrangements.
+- Storefront exterior
+- Roadside sign
+- Christmas / gift display
 
-### Supporting real flower photography
-Where the older shop imagery is too small for modern hero/card crops, use complementary high-resolution real floral photographs from Unsplash. These are representative floral photographs and are not presented as exact Skip's products.
+### Supporting flower photography
+High-resolution real floral photography from Unsplash is used where the shop's older imagery is not suitable for large modern crops. These images are representative and are not claimed as exact Skip's products.
 
-## Implementation phases
+See `CREDITS.md` for provenance.
 
-- [x] Research current business information and current florist storefronts
-- [x] Review supplied design references and define visual direction
-- [x] Build semantic page structure
-- [x] Build responsive visual system
-- [x] Add real local/shop photography and real floral imagery
-- [x] Add interactions and accessibility polish
-- [x] Add SEO/social metadata and structured business data
-- [x] Validate HTML parsing, JavaScript syntax and live destination URLs
-- [x] Add GitHub Pages deployment workflow
-- [x] Publish and verify Pages deployment
-- [x] Post-launch desktop/tablet/mobile alignment and hero-structure polish
+## Data integrity
 
-## Implemented files
+- Same-day delivery is phrased as **call to confirm availability**; no unsupported cutoff time is shown.
+- No fictional customer reviews are displayed.
+- No newsletter/subscription feature is added unless the florist actually provides one.
+- No cart icon or Add-to-cart interaction is simulated.
+- Product highlight names/prices are based on the current Skip's storefront at implementation time and are accompanied by a visible representative-photo disclaimer.
+- Fees, availability and checkout totals remain on the live storefront.
 
-- `index.html` — page structure, SEO, structured local-business data and content
-- `styles.css` — base responsive visual system
-- `layout-fixes.css` — container alignment, hero typography/media structure and responsive polish
-- `app.js` — layout-polish stylesheet loading, mobile nav, live store status, reveal interactions and lightweight petal canvas
-- `CREDITS.md` — real photography provenance and representative-image disclaimer
-- `.github/workflows/pages.yml` — GitHub Pages deployment
-- `.nojekyll` — static-site compatibility
-- `README.md` — project/deployment overview
+## Implementation status
 
-## Deployment target
+- [x] Research current business information and live storefront
+- [x] Review original editorial/local references
+- [x] Review new ecommerce reference and extract visual-only patterns
+- [x] Rework header/navigation alignment
+- [x] Rebuild hero around a centered two-column commerce layout
+- [x] Add horizontal occasion shortcuts
+- [x] Rework flower highlights into compact ecommerce cards
+- [x] Remove fake-review / fake-cart patterns
+- [x] Keep delivery messaging factual
+- [x] Compact weddings, Christmas House and local-story modules
+- [x] Rebuild responsive/mobile structure around the new hierarchy
+- [x] Preserve live open/closed status in `America/New_York`
+- [x] Preserve GitHub Pages deployment workflow
+- [ ] Publish this redesign to GitHub Pages
 
-GitHub Pages: `https://prithiraj.github.io/Skip_s_Florist_Christmas_House/`
+## Files
 
-Verified through the successful GitHub Pages deployment workflow.
+- `index.html` — semantic page structure, factual content, live-store handoffs and structured business data
+- `styles.css` — responsive ecommerce-inspired visual system
+- `app.js` — mobile navigation, store-status calculation and reveal behavior
+- `CREDITS.md` — photography provenance
+- `.github/workflows/pages.yml` — Pages deployment
+- `.nojekyll` — static Pages compatibility
 
-## Notes
+## Deployment
 
-- This project intentionally does not duplicate the live ecommerce backend. Product and order actions hand off to Skip's current ordering experience.
-- Business hours/contact details should be treated as content that may change; update the static site when the live storefront changes.
-- Three.js was intentionally not used. The supplied references are strongest when photography and typography remain dominant, so the decorative layer is a much lighter Canvas 2D petal effect instead.
+Target GitHub Pages URL:
+
+`https://prithiraj.github.io/Skip_s_Florist_Christmas_House/`
