@@ -92,7 +92,7 @@ See `CREDITS.md` for provenance.
 - [x] Rebuild responsive/mobile structure around the new hierarchy
 - [x] Preserve live open/closed status in `America/New_York`
 - [x] Preserve GitHub Pages deployment workflow
-- [ ] Publish this redesign to GitHub Pages
+- [x] Publish this redesign to GitHub Pages
 
 ## Files
 
@@ -105,6 +105,8 @@ See `CREDITS.md` for provenance.
 
 ## Deployment
 
-Target GitHub Pages URL:
+GitHub Pages URL:
 
 `https://prithiraj.github.io/Skip_s_Florist_Christmas_House/`
+
+The ecommerce-inspired redesign was published and verified through the repository's GitHub Pages workflow on September 8, 2026.
