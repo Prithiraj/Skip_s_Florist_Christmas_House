@@ -1,0 +1,143 @@
+:root {
+  --content-width: 1240px;
+}
+
+/*
+  Alignment polish pass.
+  Keep the same horizontal rhythm across the header, hero and section content,
+  and prevent the hero headline from colliding with the photography.
+*/
+.nav-shell {
+  max-width: var(--content-width);
+}
+
+.section-shell {
+  width: 100%;
+  max-width: var(--content-width);
+}
+
+.hero {
+  width: 100%;
+  max-width: var(--content-width);
+  grid-template-columns: minmax(0, .88fr) minmax(500px, 1.12fr);
+  gap: clamp(2.5rem, 4vw, 4.75rem);
+  min-height: 640px;
+}
+
+.hero-copy {
+  min-width: 0;
+  max-width: 540px;
+  padding-left: 0;
+  align-self: center;
+}
+
+.hero h1 {
+  max-width: 100%;
+  font-size: clamp(4rem, 5.2vw, 6.25rem);
+  line-height: .9;
+  letter-spacing: -.055em;
+  margin-bottom: 1.5rem;
+  text-wrap: balance;
+}
+
+.hero h1 em {
+  display: block;
+  white-space: nowrap;
+}
+
+.hero-lede {
+  max-width: 500px;
+  font-size: 1.03rem;
+  line-height: 1.65;
+}
+
+.hero-media {
+  min-width: 0;
+  min-height: 540px;
+}
+
+.hero-photo-main {
+  inset: 0 6% 3% 10%;
+}
+
+.hero-photo-side {
+  width: 34%;
+  height: 40%;
+  left: 0;
+}
+
+.local-badge {
+  right: 0;
+  bottom: 7%;
+  width: 154px;
+}
+
+.trust-strip {
+  width: calc(100% - 56px);
+  max-width: calc(var(--content-width) - 56px);
+}
+
+@media (max-width: 1020px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    min-height: auto;
+  }
+
+  .hero-copy {
+    max-width: 760px;
+    padding-top: 24px;
+  }
+
+  .hero h1 {
+    font-size: clamp(4rem, 9vw, 6.25rem);
+  }
+
+  .hero-media {
+    min-height: 520px;
+  }
+}
+
+@media (max-width: 720px) {
+  .section-shell {
+    padding-inline: 18px;
+  }
+
+  .hero {
+    gap: 1.6rem;
+  }
+
+  .hero-copy {
+    padding-top: 4px;
+  }
+
+  .hero h1 {
+    font-size: clamp(3.05rem, 15vw, 4.8rem);
+    line-height: .92;
+  }
+
+  .hero-media {
+    min-height: 440px;
+  }
+
+  .hero-photo-main {
+    inset: 0 0 6% 8%;
+  }
+
+  .hero-photo-side {
+    width: 38%;
+    height: 36%;
+    left: 0;
+  }
+
+  .local-badge {
+    width: 118px;
+    right: -2%;
+    bottom: 1%;
+  }
+
+  .trust-strip {
+    width: calc(100% - 36px);
+    margin-inline: 18px;
+  }
+}
