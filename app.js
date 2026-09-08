@@ -1,4 +1,9 @@
 (() => {
+  const layoutStyles = document.createElement('link');
+  layoutStyles.rel = 'stylesheet';
+  layoutStyles.href = 'layout-fixes.css';
+  document.head.appendChild(layoutStyles);
+
   const menuButton = document.getElementById('menuButton');
   const siteNav = document.getElementById('siteNav');
   const year = document.getElementById('year');
