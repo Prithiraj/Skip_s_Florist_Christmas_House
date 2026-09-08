@@ -89,7 +89,7 @@ Where the older shop imagery is too small for modern hero/card crops, use comple
 - [x] Add SEO/social metadata and structured business data
 - [x] Validate HTML parsing, JavaScript syntax and live destination URLs
 - [x] Add GitHub Pages deployment workflow
-- [ ] Publish and verify Pages deployment
+- [x] Publish and verify Pages deployment
 
 ## Implemented files
 
@@ -103,7 +103,9 @@ Where the older shop imagery is too small for modern hero/card crops, use comple
 
 ## Deployment target
 
-GitHub Pages for `Prithiraj/Skip_s_Florist_Christmas_House`.
+GitHub Pages: `https://prithiraj.github.io/Skip_s_Florist_Christmas_House/`
+
+Verified through the successful GitHub Pages deployment workflow.
 
 ## Notes
 
