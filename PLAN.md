@@ -54,6 +54,7 @@ The site should feel like a real neighborhood florist first and a generic ecomme
 - **Core colors:** evergreen, warm ivory, cranberry, terracotta, sage, brass
 - **Image treatment:** natural crops, rounded editorial cards, subtle borders/shadows, no aggressive overlays
 - **Motion:** reveal/hover transitions plus a lightweight Canvas 2D falling-petal ambience; disabled for `prefers-reduced-motion`
+- **Layout rhythm:** header, hero and content sections share a 1240px outer container with consistent 28px desktop gutters; the hero copy and photography keep independent columns without overlap.
 
 ## Technical approach
 
@@ -63,6 +64,7 @@ The site should feel like a real neighborhood florist first and a generic ecomme
 - External commerce CTAs point to the florist's existing live ordering website.
 - Google Maps/directions uses the supplied place link/query plus a simple embedded map.
 - `app.js` calculates current open/closed status in the `America/New_York` timezone.
+- `layout-fixes.css` contains the post-launch responsive alignment pass and is loaded by `app.js` after the base visual system.
 - GitHub Pages workflow in `.github/workflows/pages.yml` deploys the repository root and requests Pages enablement when needed.
 
 ## Photography plan
@@ -90,12 +92,14 @@ Where the older shop imagery is too small for modern hero/card crops, use comple
 - [x] Validate HTML parsing, JavaScript syntax and live destination URLs
 - [x] Add GitHub Pages deployment workflow
 - [x] Publish and verify Pages deployment
+- [x] Post-launch desktop/tablet/mobile alignment and hero-structure polish
 
 ## Implemented files
 
 - `index.html` — page structure, SEO, structured local-business data and content
-- `styles.css` — full responsive visual system
-- `app.js` — mobile nav, live store status, reveal interactions and lightweight petal canvas
+- `styles.css` — base responsive visual system
+- `layout-fixes.css` — container alignment, hero typography/media structure and responsive polish
+- `app.js` — layout-polish stylesheet loading, mobile nav, live store status, reveal interactions and lightweight petal canvas
 - `CREDITS.md` — real photography provenance and representative-image disclaimer
 - `.github/workflows/pages.yml` — GitHub Pages deployment
 - `.nojekyll` — static-site compatibility
